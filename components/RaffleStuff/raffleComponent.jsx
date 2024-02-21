@@ -263,7 +263,7 @@ function handleCost(e){
             <div className="w-60 h-60 mb-5 mx-auto border-2 border-white bg-white">
                 <Image width={1920} height={1080} className=' mb-4 mx-auto' alt='Raffle Item' src={image}></Image>
                 </div>
-            <h2 className='text-black text-3xl'>{name}</h2>
+            <h2 className='text-black text-2xl'>{name}</h2>
             <div>
               <h2>Entrants: {entrants} </h2>
               <h2>Tickets Sold: {ticketsSold}</h2>
