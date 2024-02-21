@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images:{domains:["ipfs.io", "gateway.pinata.cloud"]},
+    reactStrictMode: false,
+}
 
 export default nextConfig;
