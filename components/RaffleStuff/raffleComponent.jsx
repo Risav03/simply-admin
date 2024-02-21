@@ -12,7 +12,7 @@ import Image from "next/image"
 
 export default function RaffleComponent({number}){
 
-    const raffleAdd = "0xe3B1ccCA0eA2B8461B2976618Aa667d6254B5609";
+    const raffleAdd = "0x387df947fB66EeF455e738D1D6650eCcdb302d29";
 
     const[contractAdd, setContractAdd] = useState("");
     const[tokenId, setTokenId] = useState(null);
