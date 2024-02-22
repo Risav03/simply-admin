@@ -208,6 +208,7 @@ function handleCost(e){
       }
       catch(err){
         console.log(err);
+        setTimeout(()=>{checkRaffleItem(number)}, 1000)
       }
     }
 
@@ -228,22 +229,7 @@ function handleCost(e){
         catch (err) {
         console.log("Error", err);
         setLoading(false);
-        //   Swal.fire({
-        //     title: 'Error!',
-        //     text: 'Couldn\'t get fetching contract',
-        //     imageUrl: error,
-        //     imageWidth: 200,
-        //     imageHeight: 200,
-        //     imageAlt: "Taco OOPS!",
-        //     confirmButtonText: 'Bruh 😭',
-        //     confirmButtonColor: "#facc14",
-        //     customClass: {
-        //       container: "border-8 border-black",
-        //       popup: "bg-white rounded-2xl border-8 border-black",
-        //       image: "-mb-5",
-        //       confirmButton: "w-40 text-black"
-        //     }
-        //   })
+        
         }
 
     }
@@ -259,7 +245,7 @@ function handleCost(e){
             <div className='  bg-amber-400 p-5 w-full flex flex-col items-center justify-center '>
 
 
-          {itemExists ?<div className='w-[100%] text-center'>
+          {itemExists ? <div className='w-[100%] text-center'>
             <div className="w-60 h-60 mb-5 mx-auto border-2 border-white bg-white">
                 <Image width={1920} height={1080} className=' mb-4 mx-auto' alt='Raffle Item' src={image}></Image>
                 </div>
