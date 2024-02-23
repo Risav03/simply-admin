@@ -12,7 +12,7 @@ import Image from "next/image"
 
 export default function RaffleComponent({number}){
 
-    const raffleAdd = "0x387df947fB66EeF455e738D1D6650eCcdb302d29";
+    const raffleAdd = "0x74FE9CDcefff983efd68EE48fB154f6F9444a24C";
 
     const[contractAdd, setContractAdd] = useState("");
     const[tokenId, setTokenId] = useState(null);
@@ -70,7 +70,7 @@ function handleCost(e){
         const contract = await raffleContract();
 
         if(number < 5){
-            const txn = contract.setSimpleRaffleItem(number, contractAdd, limitPerWallet, tokenId, allowedTickets, ethers.utils.parseEther(String(cost)));
+            const txn = await contract.setSimpleRaffleItem(number, contractAdd, limitPerWallet, tokenId, allowedTickets, ethers.utils.parseEther(String(cost)));
             txn.wait().then(()=>{
               setLoading(false);
               window.location.reload();
@@ -78,7 +78,7 @@ function handleCost(e){
         }
 
         else{
-          const txn = contract.setMaticRaffleItem(number, contractAdd, limitPerWallet, tokenId, allowedTickets, ethers.utils.parseEther(String(cost)));
+          const txn = await contract.setMaticRaffleItem(number, contractAdd, limitPerWallet, tokenId, allowedTickets, ethers.utils.parseEther(String(cost)));
           txn.wait().then(()=>{
             setLoading(false);
             window.location.reload();
