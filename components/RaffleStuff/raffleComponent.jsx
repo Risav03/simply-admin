@@ -22,7 +22,7 @@ export default function RaffleComponent({number}){
 
     const [loading, setLoading] = useState(false);
 
-    const [winner, setWinner] = useState("");
+
 
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
@@ -138,7 +138,7 @@ function handleCost(e){
             const winner = await contract?.declareWinner(number);
             winner.wait().then(async (res)=>{
 
-              setWinner(await contract?.winningAddress(number));
+
             });  
     
           }
@@ -162,7 +162,7 @@ function handleCost(e){
           
           const contract2 = await setERC721Contract();
           console.log(contract2);
-          setWinner(await contract1.winningAddress(number));
+
           const tokenId = Number(await contract1?.raffleTokenId(number)) ;
           const tokenURI = await contract2.tokenURI(tokenId);
 
@@ -178,7 +178,7 @@ function handleCost(e){
     
                     console.log(newimage);
         
-                    setWinner(await contract1.winningAddress(number));
+
                     setTicketsSold(Number(await contract1?.ticketsSold(number)));
                     setEntrants(Number(await contract1?.totalEntrants(number)));
                     setName(name);
@@ -197,7 +197,7 @@ function handleCost(e){
     
                     console.log(newimage);
         
-                    setWinner(await contract1.winningAddress(number));
+
                     setTicketsSold(Number(await contract1?.ticketsSold(number)));
                     setEntrants(Number(await contract1?.totalEntrants(number)));
                     setName(name);
@@ -253,7 +253,7 @@ function handleCost(e){
             <div>
               <h2>Entrants: {entrants} </h2>
               <h2>Tickets Sold: {ticketsSold}</h2>
-              <h2 className='text-sm truncate'>{winner}</h2>
+
               <button onClick={declareWinner} className='bg-blue-400 mx-2 text-white py-2 px-4  my-2 text-[1.5rem]'>Declare Winner!</button>
               <button onClick={deleteRaffle} className='bg-red-400 mx-2 text-white py-2 px-4  my-2 text-[1.5rem]'>Delete Raffle</button>
             </div>

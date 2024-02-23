@@ -9,7 +9,6 @@ import RaffleComponent from "@/components/RaffleStuff/raffleComponent";
 export default function Home() {
   const{address, isConnected} = useAccount();
 
-
   const raffleAdd = "0x74FE9CDcefff983efd68EE48fB154f6F9444a24C";
 
 
